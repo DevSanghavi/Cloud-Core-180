@@ -1,0 +1,35 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "DenyInsecureTransportPractice",
+      "Effect": "Deny",
+      "Principal": "*",
+      "Action": "s3:*",
+      "Resource": [
+        "arn:aws:s3:::cloudmentor-day57-practice-1786643700",
+        "arn:aws:s3:::cloudmentor-day57-practice-1786643700/*"
+      ],
+      "Condition": {
+        "Bool": { "aws:SecureTransport": "false" }
+      }
+    },
+    {
+      "Sid": "AllowUserListReportsPrefix",
+      "Effect": "Allow",
+      "Principal": { "AWS": "arn:aws:iam::151024280292:user/dev-sanghavi-admin-uc" },
+      "Action": "s3:ListBucket",
+      "Resource": "arn:aws:s3:::cloudmentor-day57-practice-1786643700",
+      "Condition": {
+        "StringLike": { "s3:prefix": ["lab/reports", "lab/reports/*"] }
+      }
+    },
+    {
+      "Sid": "AllowUserReadReportsObjects",
+      "Effect": "Allow",
+      "Principal": { "AWS": "arn:aws:iam::151024280292:user/dev-sanghavi-admin-uc" },
+      "Action": "s3:GetObject",
+      "Resource": "arn:aws:s3:::cloudmentor-day57-practice-1786643700/lab/reports/*"
+    }
+  ]
+}

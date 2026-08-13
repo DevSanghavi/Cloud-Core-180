@@ -1,0 +1,42 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "DenyInsecureTransport",
+      "Effect": "Deny",
+      "Principal": "*",
+      "Action": "s3:*",
+      "Resource": [
+        "arn:aws:s3:::cloudmentor-day57-main-1786643684",
+        "arn:aws:s3:::cloudmentor-day57-main-1786643684/*"
+      ],
+      "Condition": {
+        "Bool": { "aws:SecureTransport": "false" }
+      }
+    },
+    {
+      "Sid": "AllowUserListLabPrefix",
+      "Effect": "Allow",
+      "Principal": { "AWS": "arn:aws:iam::151024280292:user/dev-sanghavi-admin-uc" },
+      "Action": "s3:ListBucket",
+      "Resource": "arn:aws:s3:::cloudmentor-day57-main-1786643684",
+      "Condition": {
+        "StringLike": { "s3:prefix": ["lab", "lab/*"] }
+      }
+    },
+    {
+      "Sid": "AllowUserReadLabObjects",
+      "Effect": "Allow",
+      "Principal": { "AWS": "arn:aws:iam::151024280292:user/dev-sanghavi-admin-uc" },
+      "Action": "s3:GetObject",
+      "Resource": "arn:aws:s3:::cloudmentor-day57-main-1786643684/lab/*"
+    },
+    {
+      "Sid": "DenyAccessOutsideLabPrefix",
+      "Effect": "Deny",
+      "Principal": { "AWS": "arn:aws:iam::151024280292:user/dev-sanghavi-admin-uc" },
+      "Action": "s3:GetObject",
+      "NotResource": "arn:aws:s3:::cloudmentor-day57-main-1786643684/lab/*"
+    }
+  ]
+}
