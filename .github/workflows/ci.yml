@@ -1,0 +1,16 @@
+name: CI
+on:
+  pull_request:
+    branches: [ "main" ]
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Simple validation
+        run: |
+          echo "=== CI Validation ==="
+          if [ ! -f CHANGELOG.md ]; then echo "::error::CHANGELOG.md missing"; exit 1; fi
+          if [ ! -f app.py ]; then echo "::error::app.py missing"; exit 1; fi
+          echo "CI passed."
