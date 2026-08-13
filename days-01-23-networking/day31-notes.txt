@@ -1,0 +1,1 @@
+July 26, 2026: The 'journalctl -b -1 -p err..alert' filter gave the clearest incident signal because it completely hides normal background noise and exposes the exact critical errors that happened right before the system crashed or rebooted.

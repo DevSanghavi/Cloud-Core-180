@@ -1,0 +1,10 @@
+VPC CIDR: 10.70.0.0/16
+
+Web subnet:       10.70.1.0/24  (public, routed to Internet Gateway)
+App subnet:       10.70.2.0/24  (private, routed to NAT Gateway)
+Database subnet:  10.70.3.0/24  (private, no Internet route; only reachable from App subnet)
+
+Key routing ideas:
+- Web subnet has a default route to IGW; can reach Internet and App subnet.
+- App subnet has default route to NAT for outbound only; can talk to DB over local VPC route.
+- DB subnet has no direct Internet route; only routes to 10.70.0.0/16 and on-prem over VPN.

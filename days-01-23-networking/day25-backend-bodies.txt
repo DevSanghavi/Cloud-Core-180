@@ -1,0 +1,250 @@
+15:58:43.951946 IP 127.0.0.1.53780 > 127.0.0.1.8082: Flags [P.], seq 3784281656:3784281797, ack 882594078, win 512, options [nop,nop,TS val 822417194 ecr 822417194], length 141
+E....,@.@..................84.Q............
+1..*1..*GET / HTTP/1.0
+Host: localhost
+X-Real-IP: 127.0.0.1
+X-Forwarded-For: 127.0.0.1
+Connection: close
+User-Agent: curl/8.5.0
+Accept: */*
+
+
+15:58:43.954043 IP 127.0.0.1.8082 > 127.0.0.1.53780: Flags [P.], seq 1:186, ack 141, win 512, options [nop,nop,TS val 822417196 ecr 822417194], length 185
+E....q@.@...............4.Q................
+1..,1..*HTTP/1.0 200 OK
+Server: SimpleHTTP/0.6 Python/3.12.3
+Date: Thu, 23 Jul 2026 15:58:43 GMT
+Content-type: text/html
+Content-Length: 61
+Last-Modified: Tue, 21 Jul 2026 14:34:05 GMT
+
+
+15:58:43.954179 IP 127.0.0.1.8082 > 127.0.0.1.53780: Flags [P.], seq 186:247, ack 141, win 512, options [nop,nop,TS val 822417196 ecr 822417196], length 61
+E..q.r@.@...............4.Q..........e.....
+1..,1..,Backend instance 2 - served from /var/www/html/app-backend-2
+
+15:58:43.970236 IP 127.0.0.1.48420 > 127.0.0.1.8081: Flags [P.], seq 3575180491:3575180632, ack 1215588830, win 512, options [nop,nop,TS val 822417212 ecr 822417212], length 141
+E.....@.@.p6.........$......Hti............
+1..<1..<GET / HTTP/1.0
+Host: localhost
+X-Real-IP: 127.0.0.1
+X-Forwarded-For: 127.0.0.1
+Connection: close
+User-Agent: curl/8.5.0
+Accept: */*
+
+
+15:58:43.971645 IP 127.0.0.1.8081 > 127.0.0.1.48420: Flags [P.], seq 1:186, ack 141, win 512, options [nop,nop,TS val 822417213 ecr 822417212], length 185
+E.....@.@.g............$Hti....X...........
+1..=1..<HTTP/1.0 200 OK
+Server: SimpleHTTP/0.6 Python/3.12.3
+Date: Thu, 23 Jul 2026 15:58:43 GMT
+Content-type: text/html
+Content-Length: 61
+Last-Modified: Tue, 21 Jul 2026 14:33:35 GMT
+
+
+15:58:43.971712 IP 127.0.0.1.8081 > 127.0.0.1.48420: Flags [P.], seq 186:247, ack 141, win 512, options [nop,nop,TS val 822417214 ecr 822417213], length 61
+E..q..@.@.g............$Htj....X.....e.....
+1..>1..=Backend instance 1 - served from /var/www/html/app-backend-1
+
+15:58:43.987253 IP 127.0.0.1.53794 > 127.0.0.1.8082: Flags [P.], seq 3967311712:3967311853, ack 2290336632, win 512, options [nop,nop,TS val 822417229 ecr 822417229], length 141
+E.....@.@............"...x_`...x...........
+1..M1..MGET / HTTP/1.0
+Host: localhost
+X-Real-IP: 127.0.0.1
+X-Forwarded-For: 127.0.0.1
+Connection: close
+User-Agent: curl/8.5.0
+Accept: */*
+
+
+15:58:43.988865 IP 127.0.0.1.8082 > 127.0.0.1.53794: Flags [P.], seq 1:186, ack 141, win 512, options [nop,nop,TS val 822417231 ecr 822417229], length 185
+E.....@.@.u............"...x.x_............
+1..O1..MHTTP/1.0 200 OK
+Server: SimpleHTTP/0.6 Python/3.12.3
+Date: Thu, 23 Jul 2026 15:58:43 GMT
+Content-type: text/html
+Content-Length: 61
+Last-Modified: Tue, 21 Jul 2026 14:34:05 GMT
+
+
+15:58:43.989043 IP 127.0.0.1.8082 > 127.0.0.1.53794: Flags [P.], seq 186:247, ack 141, win 512, options [nop,nop,TS val 822417231 ecr 822417231], length 61
+E..q..@.@.vx..........."...1.x_......e.....
+1..O1..OBackend instance 2 - served from /var/www/html/app-backend-2
+
+15:58:44.004077 IP 127.0.0.1.48436 > 127.0.0.1.8081: Flags [P.], seq 3120896475:3120896616, ack 1162807511, win 512, options [nop,nop,TS val 822417246 ecr 822417246], length 141
+E.....@.@.y}.........4......EO.............
+1..^1..^GET / HTTP/1.0
+Host: localhost
+X-Real-IP: 127.0.0.1
+X-Forwarded-For: 127.0.0.1
+Connection: close
+User-Agent: curl/8.5.0
+Accept: */*
+
+
+15:58:44.005373 IP 127.0.0.1.8081 > 127.0.0.1.48436: Flags [P.], seq 1:186, ack 141, win 512, options [nop,nop,TS val 822417247 ecr 822417246], length 185
+E...2.@.@.	*...........4EO.....h...........
+1.._1..^HTTP/1.0 200 OK
+Server: SimpleHTTP/0.6 Python/3.12.3
+Date: Thu, 23 Jul 2026 15:58:44 GMT
+Content-type: text/html
+Content-Length: 61
+Last-Modified: Tue, 21 Jul 2026 14:33:35 GMT
+
+
+15:58:44.005503 IP 127.0.0.1.8081 > 127.0.0.1.48436: Flags [P.], seq 186:247, ack 141, win 512, options [nop,nop,TS val 822417247 ecr 822417247], length 61
+E..q2.@.@.	............4EO	....h.....e.....
+1.._1.._Backend instance 1 - served from /var/www/html/app-backend-1
+
+15:58:44.021984 IP 127.0.0.1.53810 > 127.0.0.1.8082: Flags [P.], seq 287838763:287838904, ack 564771218, win 512, options [nop,nop,TS val 822417264 ecr 822417264], length 141
+E...[p@.@............2...(.+!..............
+1..p1..pGET / HTTP/1.0
+Host: localhost
+X-Real-IP: 127.0.0.1
+X-Forwarded-For: 127.0.0.1
+Connection: close
+User-Agent: curl/8.5.0
+Accept: */*
+
+
+15:58:44.023221 IP 127.0.0.1.8082 > 127.0.0.1.53810: Flags [P.], seq 1:186, ack 141, win 512, options [nop,nop,TS val 822417265 ecr 822417264], length 185
+E.....@.@.jG...........2!....(.............
+1..q1..pHTTP/1.0 200 OK
+Server: SimpleHTTP/0.6 Python/3.12.3
+Date: Thu, 23 Jul 2026 15:58:44 GMT
+Content-type: text/html
+Content-Length: 61
+Last-Modified: Tue, 21 Jul 2026 14:34:05 GMT
+
+
+15:58:44.023352 IP 127.0.0.1.8082 > 127.0.0.1.53810: Flags [P.], seq 186:247, ack 141, win 512, options [nop,nop,TS val 822417265 ecr 822417265], length 61
+E..q..@.@.j............2!..K.(.......e.....
+1..q1..qBackend instance 2 - served from /var/www/html/app-backend-2
+
+15:58:44.038353 IP 127.0.0.1.48442 > 127.0.0.1.8081: Flags [P.], seq 977413880:977414021, ack 1339730994, win 512, options [nop,nop,TS val 822417280 ecr 822417280], length 141
+E...u.@.@..;.........:..:B&.O..2...........
+1...1...GET / HTTP/1.0
+Host: localhost
+X-Real-IP: 127.0.0.1
+X-Forwarded-For: 127.0.0.1
+Connection: close
+User-Agent: curl/8.5.0
+Accept: */*
+
+
+15:58:44.039349 IP 127.0.0.1.8081 > 127.0.0.1.48442: Flags [P.], seq 1:186, ack 141, win 512, options [nop,nop,TS val 822417281 ecr 822417280], length 185
+E...C.@.@..............:O..2:B'............
+1...1...HTTP/1.0 200 OK
+Server: SimpleHTTP/0.6 Python/3.12.3
+Date: Thu, 23 Jul 2026 15:58:44 GMT
+Content-type: text/html
+Content-Length: 61
+Last-Modified: Tue, 21 Jul 2026 14:33:35 GMT
+
+
+15:58:44.039431 IP 127.0.0.1.8081 > 127.0.0.1.48442: Flags [P.], seq 186:247, ack 141, win 512, options [nop,nop,TS val 822417281 ecr 822417281], length 61
+E..qC.@.@..w...........:O...:B'......e.....
+1...1...Backend instance 1 - served from /var/www/html/app-backend-1
+
+15:58:44.054954 IP 127.0.0.1.53816 > 127.0.0.1.8082: Flags [P.], seq 3242885431:3242885572, ack 3163807128, win 512, options [nop,nop,TS val 822417297 ecr 822417297], length 141
+E...Ld@.@............8...J.7...............
+1...1...GET / HTTP/1.0
+Host: localhost
+X-Real-IP: 127.0.0.1
+X-Forwarded-For: 127.0.0.1
+Connection: close
+User-Agent: curl/8.5.0
+Accept: */*
+
+
+15:58:44.055962 IP 127.0.0.1.8082 > 127.0.0.1.53816: Flags [P.], seq 1:186, ack 141, win 512, options [nop,nop,TS val 822417298 ecr 822417297], length 185
+E....6@.@.a............8.....J.............
+1...1...HTTP/1.0 200 OK
+Server: SimpleHTTP/0.6 Python/3.12.3
+Date: Thu, 23 Jul 2026 15:58:44 GMT
+Content-type: text/html
+Content-Length: 61
+Last-Modified: Tue, 21 Jul 2026 14:34:05 GMT
+
+
+15:58:44.056101 IP 127.0.0.1.8082 > 127.0.0.1.53816: Flags [P.], seq 186:247, ack 141, win 512, options [nop,nop,TS val 822417298 ecr 822417298], length 61
+E..q.7@.@.bM...........8...Q.J.......e.....
+1...1...Backend instance 2 - served from /var/www/html/app-backend-2
+
+15:58:44.071606 IP 127.0.0.1.53830 > 127.0.0.1.8082: Flags [P.], seq 92669841:92669982, ack 3998856763, win 512, options [nop,nop,TS val 822417313 ecr 822417313], length 141
+E...~.@.@............F.......Y.;...........
+1...1...GET / HTTP/1.0
+Host: localhost
+X-Real-IP: 127.0.0.1
+X-Forwarded-For: 127.0.0.1
+Connection: close
+User-Agent: curl/8.5.0
+Accept: */*
+
+
+15:58:44.072575 IP 127.0.0.1.8082 > 127.0.0.1.53830: Flags [P.], seq 1:186, ack 141, win 512, options [nop,nop,TS val 822417314 ecr 822417313], length 185
+E.....@.@.~%...........F.Y.;...............
+1...1...HTTP/1.0 200 OK
+Server: SimpleHTTP/0.6 Python/3.12.3
+Date: Thu, 23 Jul 2026 15:58:44 GMT
+Content-type: text/html
+Content-Length: 61
+Last-Modified: Tue, 21 Jul 2026 14:34:05 GMT
+
+
+15:58:44.072645 IP 127.0.0.1.8082 > 127.0.0.1.53830: Flags [P.], seq 186:247, ack 141, win 512, options [nop,nop,TS val 822417314 ecr 822417314], length 61
+E..q..@.@.~............F.Y...........e.....
+1...1...Backend instance 2 - served from /var/www/html/app-backend-2
+
+15:58:44.086987 IP 127.0.0.1.48448 > 127.0.0.1.8081: Flags [P.], seq 3857682017:3857682158, ack 623678301, win 512, options [nop,nop,TS val 822417329 ecr 822417329], length 141
+E.....@.@.G..........@.....a%,.]...........
+1...1...GET / HTTP/1.0
+Host: localhost
+X-Real-IP: 127.0.0.1
+X-Forwarded-For: 127.0.0.1
+Connection: close
+User-Agent: curl/8.5.0
+Accept: */*
+
+
+15:58:44.088488 IP 127.0.0.1.8081 > 127.0.0.1.48448: Flags [P.], seq 1:186, ack 141, win 512, options [nop,nop,TS val 822417330 ecr 822417329], length 185
+E.....@.@.w............@%,.]...............
+1...1...HTTP/1.0 200 OK
+Server: SimpleHTTP/0.6 Python/3.12.3
+Date: Thu, 23 Jul 2026 15:58:44 GMT
+Content-type: text/html
+Content-Length: 61
+Last-Modified: Tue, 21 Jul 2026 14:33:35 GMT
+
+
+15:58:44.088565 IP 127.0.0.1.8081 > 127.0.0.1.48448: Flags [P.], seq 186:247, ack 141, win 512, options [nop,nop,TS val 822417330 ecr 822417330], length 61
+E..q..@.@.w............@%,...........e.....
+1...1...Backend instance 1 - served from /var/www/html/app-backend-1
+
+15:58:44.105087 IP 127.0.0.1.53842 > 127.0.0.1.8082: Flags [P.], seq 1123547680:1123547821, ack 3936520457, win 512, options [nop,nop,TS val 822417347 ecr 822417347], length 141
+E.....@.@.. .........R..B.. ...	...........
+1...1...GET / HTTP/1.0
+Host: localhost
+X-Real-IP: 127.0.0.1
+X-Forwarded-For: 127.0.0.1
+Connection: close
+User-Agent: curl/8.5.0
+Accept: */*
+
+
+15:58:44.106658 IP 127.0.0.1.8082 > 127.0.0.1.53842: Flags [P.], seq 1:186, ack 141, win 512, options [nop,nop,TS val 822417348 ecr 822417347], length 185
+E....5@.@..............R...	B..............
+1...1...HTTP/1.0 200 OK
+Server: SimpleHTTP/0.6 Python/3.12.3
+Date: Thu, 23 Jul 2026 15:58:44 GMT
+Content-type: text/html
+Content-Length: 61
+Last-Modified: Tue, 21 Jul 2026 14:34:05 GMT
+
+
+15:58:44.106790 IP 127.0.0.1.8082 > 127.0.0.1.53842: Flags [P.], seq 186:247, ack 141, win 512, options [nop,nop,TS val 822417349 ecr 822417348], length 61
+E..q.6@.@..O...........R....B........e.....
+1...1...Backend instance 2 - served from /var/www/html/app-backend-2
+

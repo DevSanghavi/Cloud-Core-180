@@ -1,0 +1,17 @@
+VPC CIDR: 10.50.0.0/16
+
+Public subnet A: 10.50.1.0/24
+- Network: 10.50.1.0
+- Broadcast: 10.50.1.255
+- Usable hosts: 10.50.1.1 - 10.50.1.254 (254 usable)
+
+Private subnet A: 10.50.2.0/24
+- Network: 10.50.2.0
+- Broadcast: 10.50.2.255
+- Usable hosts: 10.50.2.1 - 10.50.2.254 (254 usable)
+
+Database subnet: 10.50.10.0/24
+- Network: 10.50.10.0
+- Broadcast: 10.50.10.255
+- Usable hosts: 10.50.10.1 - 10.50.10.254 (254 usable)
+10.50.0.0/16 total addresses: 65536 (65536), typical usable ~65534

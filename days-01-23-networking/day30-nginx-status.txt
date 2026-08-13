@@ -1,0 +1,27 @@
+● nginx.service - A high performance web server and a reverse proxy server
+     Loaded: loaded (/usr/lib/systemd/system/nginx.service; enabled; preset: enabled)
+     Active: active (running) since Sat 2026-07-25 17:32:29 UTC; 5min ago
+       Docs: man:nginx(8)
+    Process: 176 ExecStartPre=/usr/sbin/nginx -t -q -g daemon on; master_process on; (code=exited, status=0/SUCCESS)
+    Process: 197 ExecStart=/usr/sbin/nginx -g daemon on; master_process on; (code=exited, status=0/SUCCESS)
+   Main PID: 204 (nginx)
+      Tasks: 13 (limit: 9109)
+     Memory: 12.4M (peak: 13.3M)
+        CPU: 142ms
+     CGroup: /system.slice/nginx.service
+             ├─204 "nginx: master process /usr/sbin/nginx -g daemon on; master_process on;"
+             ├─205 "nginx: worker process"
+             ├─206 "nginx: worker process"
+             ├─207 "nginx: worker process"
+             ├─208 "nginx: worker process"
+             ├─209 "nginx: worker process"
+             ├─210 "nginx: worker process"
+             ├─211 "nginx: worker process"
+             ├─212 "nginx: worker process"
+             ├─213 "nginx: worker process"
+             ├─214 "nginx: worker process"
+             ├─215 "nginx: worker process"
+             └─216 "nginx: worker process"
+
+Jul 25 17:32:29 DAPS systemd[1]: Starting nginx.service - A high performance web server and a reverse proxy server...
+Jul 25 17:32:29 DAPS systemd[1]: Started nginx.service - A high performance web server and a reverse proxy server.
