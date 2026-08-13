@@ -1,0 +1,8 @@
+HTTP/1.0 200 OK
+Server: SimpleHTTP/0.6 Python/3.12.3
+Date: Sat, 25 Jul 2026 14:51:39 GMT
+Content-type: text/html
+Content-Length: 61
+Last-Modified: Tue, 21 Jul 2026 14:33:35 GMT
+
+Backend instance 1 - served from /var/www/html/app-backend-1

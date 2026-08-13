@@ -1,0 +1,50 @@
+# =========================
+# Basic tmux configuration
+# =========================
+
+# Use mouse (click to select pane/window, scroll in panes)
+set -g mouse on
+
+# Set default  shell to bash
+set -g default-shell "/bin/bash"
+
+# Start window and pane numbering at 1 (more natural)
+set -g base-index 1
+setw -g pane-base-index 1
+
+# Use Ctrl+left/right to move between windows
+bind -n C-Left previous-window
+bind -n C-Right next-window
+
+# Use Alt+arrow keys to move between panes
+bind -n M-Left select-pane -L
+bind -n M-Right select-pane -R
+bind -n M-Up select-pane -U
+bind -n M-Down select-pane -D
+
+# Reload config with a key: ctrl+b then r
+bind r source-file ~/.tmux.conf \; display "Config reloaded!"
+
+# =========================
+# Status bar configuration
+# =========================
+
+# Show time in 24-hour format and session name
+set -g status-left "[#S] "
+set -g status-right "%H:%M %d-%b"
+
+# Color the status bar a bit (works in most terminals)
+set -g status-bg colour236
+set -g status-fg colour15
+
+# =========================
+# Pane border improvements
+# =========================
+
+# Color pane borders
+set -g pane-border-style "fg=colour250"
+set -g pane-active-border-style "fg=colour33"
+
+# Show pane titles (optional, nice for complex layouts)
+setw -g pane-border-status top
+setw -g pane-border-format "#T"

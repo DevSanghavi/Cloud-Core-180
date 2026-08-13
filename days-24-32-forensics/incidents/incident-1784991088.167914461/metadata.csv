@@ -1,0 +1,5 @@
+incident_id,1784991088.167914461
+bpf_filter,tcp and (port 8081 or port 8082)
+capture_if,lo
+snaplen,262144
+max_packets,1000

@@ -1,0 +1,23 @@
+2026-07-28 16:02:43 [INFO] checking service nginx
+2026-07-28 16:02:43 [INFO] nginx is running
+2026-07-28 16:02:43 [ERROR] script ended
+2026-07-28 16:03:04 [INFO] checking service nginx
+2026-07-28 16:03:04 [ERROR] nginx is not running
+2026-07-28 16:03:04 [ERROR] script ended
+2026-07-28 16:03:10 [WARN] missing service_name argument
+2026-07-28 16:03:10 [ERROR] script ended
+2026-07-28 16:03:21 [INFO] checking service nginx
+2026-07-28 16:03:21 [ERROR] nginx is not running
+2026-07-28 16:03:21 [ERROR] script ended
+2026-07-28 16:03:23 [INFO] checking service nginx
+2026-07-28 16:03:23 [ERROR] nginx is not running
+2026-07-28 16:03:23 [ERROR] script ended
+2026-07-28 16:03:24 [INFO] checking service nginx
+2026-07-28 16:03:24 [ERROR] nginx is not running
+2026-07-28 16:03:24 [ERROR] script ended
+2026-07-28 16:03:32 [INFO] checking service nginx
+2026-07-28 16:03:32 [INFO] nginx is running
+2026-07-28 16:03:32 [ERROR] script ended
+2026-07-28 16:03:33 [INFO] checking service nginx
+2026-07-28 16:03:33 [INFO] nginx is running
+2026-07-28 16:03:33 [ERROR] script ended

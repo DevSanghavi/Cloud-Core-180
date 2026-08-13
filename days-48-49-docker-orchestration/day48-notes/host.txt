@@ -1,0 +1,1 @@
+Host file line inside main folder to check the direct mount from base user.\n
