@@ -1,0 +1,70 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "DenyInsecureTransport",
+      "Effect": "Deny",
+      "Principal": "*",
+      "Action": "s3:*",
+      "Resource": [
+        "arn:aws:s3:::cloudmentor-day58-encryption-1786725990",
+        "arn:aws:s3:::cloudmentor-day58-encryption-1786725990/*"
+      ],
+      "Condition": {
+        "Bool": {
+          "aws:SecureTransport": "false"
+        }
+      }
+    },
+    {
+      "Sid": "DenyUnencryptedObjectUploads",
+      "Effect": "Deny",
+      "Principal": "*",
+      "Action": "s3:PutObject",
+      "Resource": "arn:aws:s3:::cloudmentor-day58-encryption-1786725990/secure/*",
+      "Condition": {
+        "StringNotEquals": {
+          "s3:x-amz-server-side-encryption": "AES256"
+        }
+      }
+    },
+    {
+      "Sid": "DenyMissingEncryptionHeader",
+      "Effect": "Deny",
+      "Principal": "*",
+      "Action": "s3:PutObject",
+      "Resource": "arn:aws:s3:::cloudmentor-day58-encryption-1786725990/secure/*",
+      "Condition": {
+        "Null": {
+          "s3:x-amz-server-side-encryption": "true"
+        }
+      }
+    },
+    {
+      "Sid": "AllowUserListSecurePrefix",
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": "arn:aws:iam::151024280292:user/dev-sanghavi-admin-uc"
+      },
+      "Action": "s3:ListBucket",
+      "Resource": "arn:aws:s3:::cloudmentor-day58-encryption-1786725990",
+      "Condition": {
+        "StringLike": {
+          "s3:prefix": [
+            "secure",
+            "secure/*"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "AllowUserReadSecureObjects",
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": "arn:aws:iam::151024280292:user/dev-sanghavi-admin-uc"
+      },
+      "Action": "s3:GetObject",
+      "Resource": "arn:aws:s3:::cloudmentor-day58-encryption-1786725990/secure/*"
+    }
+  ]
+}
