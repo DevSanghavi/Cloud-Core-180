@@ -1,0 +1,40 @@
+--- DAY 59 CONFIGURATION EVIDENCE ---
+Bucket: cloudmentor-day59-baseline-1786807755
+--- DEFAULT ENCRYPTION VERIFICATION ---
+{
+    "ServerSideEncryptionConfiguration": {
+        "Rules": [
+            {
+                "ApplyServerSideEncryptionByDefault": {
+                    "SSEAlgorithm": "AES256"
+                },
+                "BucketKeyEnabled": false,
+                "BlockedEncryptionTypes": {
+                    "EncryptionType": [
+                        "SSE-C"
+                    ]
+                }
+            }
+        ]
+    }
+}
+--- OBJECT OWNERSHIP VERIFICATION ---
+{
+    "OwnershipControls": {
+        "Rules": [
+            {
+                "ObjectOwnership": "BucketOwnerEnforced"
+            }
+        ]
+    }
+}
+--- STORED OBJECT ENCRYPTION METADATA ---
+{
+    "AcceptRanges": "bytes",
+    "LastModified": "2026-08-15T15:42:18+00:00",
+    "ContentLength": 33,
+    "ETag": "\"37df5132474c553d3dc6f73e581f9535\"",
+    "ContentType": "binary/octet-stream",
+    "ServerSideEncryption": "AES256",
+    "Metadata": {}
+}
