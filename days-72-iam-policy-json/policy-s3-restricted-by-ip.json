@@ -1,0 +1,19 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "AllowS3FullAccessFromHomeIPOnly",
+      "Effect": "Allow",
+      "Action": "s3:*",
+      "Resource": [
+        "arn:aws:s3:::Day71-devsanghavi-bucket",
+        "arn:aws:s3:::Day71-devsanghavi-bucket/*"
+      ],
+      "Condition": {
+        "IpAddress": {
+          "aws:SourceIp": "154.84.245.58/32"
+        }
+      }
+    }
+  ]
+}
