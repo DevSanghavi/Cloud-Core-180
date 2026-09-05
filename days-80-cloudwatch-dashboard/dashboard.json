@@ -1,0 +1,105 @@
+{
+  "widgets": [
+    {
+      "type": "text",
+      "x": 0,
+      "y": 0,
+      "width": 24,
+      "height": 2,
+      "properties": {
+        "markdown": "# Day 80 — EC2 Health Dashboard\nInstance: **i-076e283d64c5b8238** | Region: **us-east-1**"
+      }
+    },
+    {
+      "type": "metric",
+      "x": 0,
+      "y": 2,
+      "width": 8,
+      "height": 6,
+      "properties": {
+        "title": "CPU Utilization",
+        "view": "timeSeries",
+        "stacked": false,
+        "metrics": [
+          ["AWS/EC2", "CPUUtilization", "InstanceId", "i-076e283d64c5b8238"]
+        ],
+        "period": 60,
+        "stat": "Average",
+        "region": "us-east-1"
+      }
+    },
+    {
+      "type": "metric",
+      "x": 8,
+      "y": 2,
+      "width": 8,
+      "height": 6,
+      "properties": {
+        "title": "Status Check Failed",
+        "view": "timeSeries",
+        "stacked": false,
+        "metrics": [
+          ["AWS/EC2", "StatusCheckFailed", "InstanceId", "i-076e283d64c5b8238"]
+        ],
+        "period": 60,
+        "stat": "Maximum",
+        "region": "us-east-1"
+      }
+    },
+    {
+      "type": "metric",
+      "x": 16,
+      "y": 2,
+      "width": 8,
+      "height": 6,
+      "properties": {
+        "title": "Memory Used Percent",
+        "view": "timeSeries",
+        "stacked": false,
+        "metrics": [
+          ["CWAgent", "mem_used_percent", "InstanceId", "i-076e283d64c5b8238"]
+        ],
+        "period": 60,
+        "stat": "Average",
+        "region": "us-east-1"
+      }
+    },
+    {
+      "type": "metric",
+      "x": 0,
+      "y": 8,
+      "width": 12,
+      "height": 6,
+      "properties": {
+        "title": "Disk Used Percent",
+        "view": "timeSeries",
+        "stacked": false,
+        "metrics": [
+          ["CWAgent", "disk_used_percent", "InstanceId", "i-076e283d64c5b8238", "path", "/"]
+        ],
+        "period": 60,
+        "stat": "Average",
+        "region": "us-east-1"
+      }
+    },
+    {
+      "type": "metric",
+      "x": 12,
+      "y": 8,
+      "width": 12,
+      "height": 6,
+      "properties": {
+        "title": "Network In/Out",
+        "view": "timeSeries",
+        "stacked": false,
+        "metrics": [
+          ["AWS/EC2", "NetworkIn", "InstanceId", "i-076e283d64c5b8238"],
+          ["AWS/EC2", "NetworkOut", "InstanceId", "i-076e283d64c5b8238"]
+        ],
+        "period": 60,
+        "stat": "Average",
+        "region": "us-east-1"
+      }
+    }
+  ]
+}
