@@ -1,0 +1,6 @@
+profile          = "cloudmentor-admin"
+region           = "us-east-1"
+vpc_id           = "vpc-055631347ae6ee734"
+subnet_id        = "subnet-08b239377a4a5bb22"
+key_name         = "Day87-Terraform-EC2-Key"
+allowed_ssh_cidr = "154.84.245.58/32"
