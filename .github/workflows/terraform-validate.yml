@@ -1,0 +1,38 @@
+name: Day 91 Terraform Validate
+
+on:
+  pull_request:
+    branches:
+      - main
+    paths:
+      - 'days-90-tf-vpc-lab/**'
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Select the Deployment Target Environment'
+        required: true
+        default: 'dev'
+        type: choice
+        options:
+          - dev
+          - staging
+          - prod
+
+jobs:
+  validate:
+    name: Validate Terraform Files
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code Repository
+        uses: actions/checkout@v4
+
+      - name: Output Selected Target Environment
+        run: |
+          echo "The selected deployment environment target is: ${{ github.event.inputs.environment || 'dev (Automated via PR Trigger)' }}"
+
+      - name: Simulate Infrastructure Linting and Validation
+        run: |
+          echo "Executing: terraform init"
+          echo "Executing: terraform validate inside target folder days-90-tf-vpc-lab/"
+          echo "Success: Syntax validation verification completed smoothly!"

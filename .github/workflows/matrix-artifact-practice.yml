@@ -1,0 +1,29 @@
+name: Matrix and Artifact Practice
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  cross-platform:
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest]
+    runs-on: ${{ matrix.os }}
+
+    steps:
+      - name: Checkout Code Base
+        uses: actions/checkout@v4
+
+      - name: Verify Environment Platform Info
+        run: |
+          echo "This automation is executing on host architecture: ${{ matrix.os }}"
+          uname -a
+
+      - name: Upload Day 91 Documentation Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: practice-readme-artifact-${{ matrix.os }}
+          path: days-91-gh-actions-syntax/README.md
