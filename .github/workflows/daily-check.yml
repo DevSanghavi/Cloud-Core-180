@@ -1,0 +1,22 @@
+name: Daily Health Check
+
+on:
+  schedule:
+    - cron: '0 6 * * *'
+  workflow_dispatch:
+
+jobs:
+  health-check:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Check date
+        run: date
+
+      - name: Verify environment
+        run: |
+          echo "Event: ${{ github.event_name }}"
+          echo "Repo: ${{ github.repository }}"
