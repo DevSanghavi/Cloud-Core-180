@@ -34,9 +34,9 @@ jobs:
         with:
           name: source-code-node-${{ matrix.node-version }}
           path: |
-            Dockerfile
-            index.js
-            VERSION
+            days-92-github-actions-docker-build-sha/Dockerfile
+            days-92-github-actions-docker-build-sha/index.js
+            days-92-github-actions-docker-build-sha/VERSION
           retention-days: 1
 
       # Practice 2: Parse configuration values and compile Docker image
