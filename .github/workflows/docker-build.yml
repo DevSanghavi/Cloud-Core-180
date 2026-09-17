@@ -9,6 +9,10 @@ jobs:
   # Practice 3: Pre-requisite code validation job
   lint:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        # Crucial: Tells the runner to jump into your exact folder first
+        working-directory: days-92-github-actions-docker-build-sha
     steps:
       - name: Checkout repository source files
         uses: actions/checkout@v4
@@ -18,8 +22,12 @@ jobs:
 
   # Main packaging and compilation pipeline job
   build:
-    needs: [lint] # Practice 3: Build depends explicitly on lint success
+    needs: [lint] # Build depends explicitly on lint success
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        # Crucial: Tells the runner to jump into your exact folder first
+        working-directory: days-92-github-actions-docker-build-sha
     strategy:
       matrix:
         node-version: [18, 20] # Practice 4: Multi-environment matrix strategy
@@ -42,24 +50,17 @@ jobs:
       # Practice 2: Parse configuration values and compile Docker image
       - name: Compile and Tag Image with Version and Git SHA
         run: |
-          # Read the application value from the static VERSION file
           APP_VERSION=$(cat VERSION)
-          
-          # Extract the unique 7-digit identifier hash for this commit
           GIT_SHA=$(git rev-parse --short=7 "$GITHUB_SHA")
-          
-          # Create a custom tag format matching instructions
           COMBINED_TAG="$APP_VERSION-$GIT_SHA"
           
           echo "Building image version $COMBINED_TAG on Node base version ${{ matrix.node-version }}..."
           
-          # Execute build using specific matrix version and build arguments
           docker build \
             --build-arg NODE_VERSION=${{ matrix.node-version }} \
             --build-arg VERSION=$APP_VERSION \
             -t day-92-docker-build-sha:${{ matrix.node-version }}-$COMBINED_TAG .
           
-          # Export tracking parameters to the global action runner state
           echo "FINAL_IMAGE_TAG=${{ matrix.node-version }}-$COMBINED_TAG" >> "$GITHUB_ENV"
 
       - name: Export Image Artifact into Portable Tarball Archive
@@ -70,5 +71,5 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: docker-image-tar-node-${{ matrix.node-version }}
-          path: archive-*.tar
+          path: days-92-github-actions-docker-build-sha/archive-*.tar
           retention-days: 1
