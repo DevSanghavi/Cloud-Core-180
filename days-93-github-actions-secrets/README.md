@@ -7,3 +7,4 @@ We store AWS access keys and an SSH private key as GitHub repository secrets and
 | `gh secret set NAME --body VALUE` | Create/update a repo secret |
 | `gh secret list` | List secret names in repo |
 | `${{ secrets.NAME }}` | Use secret in workflow YAML |
+
