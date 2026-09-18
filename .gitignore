@@ -5,3 +5,9 @@
 **/.terraform/*
 *.pem
 .env
+
+# Ignore local secret files and SSH keys
+days-93-github-actions-secrets/day93-keys.json
+days-93-github-actions-secrets/day93-ci-ssh-key
+days-93-github-actions-secrets/day93-ci-ssh-key.pub
+days-93-github-actions-secrets/.env
