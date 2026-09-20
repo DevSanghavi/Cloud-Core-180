@@ -1,0 +1,34 @@
+name: Lint Test Build
+on:
+  push:
+    branches: [main]
+    paths: ['days-95-github-actions-lint-test/**']
+  pull_request:
+    branches: [main]
+    paths: ['days-95-github-actions-lint-test/**']
+jobs:
+  lint-shell:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install shellcheck
+        run: sudo apt-get update && sudo apt-get install -y shellcheck
+      - name: Run shellcheck
+        run: shellcheck days-95-github-actions-lint-test/scripts/deploy.sh
+  test-node:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+      - name: Install deps and run tests
+        run: cd days-95-github-actions-lint-test && npm install && npm test
+  build:
+    runs-on: ubuntu-latest
+    needs: [lint-shell, test-node]
+    if: always() && needs.lint-shell.result == 'success' && needs.test-node.result == 'success'
+    steps:
+      - uses: actions/checkout@v4
+      - name: Dummy build step
+        run: echo "Lint and tests passed, building image would happen here"

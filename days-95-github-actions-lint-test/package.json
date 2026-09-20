@@ -1,0 +1,7 @@
+{
+  "name": "day95-lint-test",
+  "version": "1.0.0",
+  "scripts": {
+    "test": "node tests/app.test.js"
+  }
+}
