@@ -1,0 +1,30 @@
+name: SSH Deploy to EC2
+
+on:
+  push:
+    branches: [main]
+    paths: ['days-96-github-actions-ssh-deploy/**']
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Load SSH key
+        uses: webfactory/ssh-agent@v0.9.0
+        with:
+          ssh-private-key: ${{ secrets.EC2_SSH_KEY }}
+
+      - name: Deploy to EC2 via SSH
+        uses: appleboy/ssh-action@v1.2.0
+        with:
+          host: ${{ secrets.EC2_HOST }}
+          username: ${{ secrets.EC2_USER }}
+          script: |
+            echo "Deployment started at $(date)"
+            sudo systemctl status nginx
+            echo "<h1>Deployed via GitHub Actions SSH - Day 96</h1>" | sudo tee /var/www/html/index.html
+            echo "Deployment completed at $(date)"
