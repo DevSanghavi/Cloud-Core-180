@@ -23,6 +23,7 @@ jobs:
         with:
           host: ${{ secrets.EC2_HOST }}
           username: ${{ secrets.EC2_USER }}
+          key: ${{ secrets.EC2_SSH_KEY }}
           script: |
             echo "Deployment started at $(date)"
             sudo systemctl status nginx

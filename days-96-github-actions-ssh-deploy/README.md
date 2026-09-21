@@ -9,3 +9,4 @@ Automate deployment to EC2 by having GitHub Actions SSH into the instance using 
 | `uses webfactory/ssh-agent@v0.9.0` | Load SSH private key from secrets |
 | `uses appleboy/ssh-action@v1.2.0` | Execute commands over SSH in CI |
 | `gh secret set EC2_SSH_KEY` | Store private key as repo secret |
+
