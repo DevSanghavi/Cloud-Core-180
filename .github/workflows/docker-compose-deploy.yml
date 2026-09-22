@@ -1,0 +1,36 @@
+name: Docker Compose Deploy to EC2
+
+on:
+  push:
+    branches: [main]
+    paths: ['days-97-github-actions-docker-compose-deploy/app/**']
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Load SSH key
+        uses: webfactory/ssh-agent@v0.9.0
+        with:
+          ssh-private-key: ${{ secrets.DAY97_SSH_KEY }}
+
+      - name: Deploy Docker Compose app to EC2
+        uses: appleboy/ssh-action@v1.2.0
+        with:
+          host: ${{ secrets.DAY97_EC2_HOST }}
+          username: ${{ secrets.DAY97_EC2_USER }}
+	  key: ${{ secrets.DAY97_SSH_KEY }}
+          script: |
+            echo "Deployment started at $(date)"
+            mkdir -p ~/day97-app
+            cd ~/day97-app
+            curl -sSLO https://raw.githubusercontent.com/DevSanghavi/Cloud-Core-180/main/days-97-github-actions-docker-compose-deploy/app/docker-compose.yml
+            docker compose pull
+            docker compose up -d
+            docker image prune -f
+            echo "Deployment completed at $(date)"
+            docker ps
