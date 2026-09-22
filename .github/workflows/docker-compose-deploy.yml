@@ -23,7 +23,6 @@ jobs:
         with:
           host: ${{ secrets.DAY97_EC2_HOST }}
           username: ${{ secrets.DAY97_EC2_USER }}
-	  key: ${{ secrets.DAY97_SSH_KEY }}
           script: |
             echo "Deployment started at $(date)"
             mkdir -p ~/day97-app
