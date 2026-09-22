@@ -9,3 +9,4 @@ Deploy containerized apps to EC2 by having GitHub Actions SSH in, pull the lates
 | `systemctl status docker` | Verify Docker daemon running |
 | `uses appleboy/ssh-action@v1.2.0` | Execute deploy commands over SSH |
 
+
