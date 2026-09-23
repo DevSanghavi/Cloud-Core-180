@@ -11,10 +11,11 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Run Flyway Migrations
-        uses: redgate/flyway-action@1
-        with:
-          url: 'jdbc:postgresql://${{ secrets.DB_HOST }}:5432/postgres'
-          user: 'postgres'
-          password: ${{ secrets.DB_PASSWORD }}
-          locations: 'filesystem:days-98-db-migrations/db/migration'
-          command: 'migrate'
+        run: |
+          docker run --rm \
+            -v ${{ github.workspace }}/days-98-db-migrations/db/migration:/flyway/sql \
+            -e FLYWAY_URL="jdbc:postgresql://${{ secrets.DB_HOST }}:5432/postgres" \
+            -e FLYWAY_USER="postgres" \
+            -e FLYWAY_PASSWORD="${{ secrets.DB_PASSWORD }}" \
+            -e FLYWAY_SCHEMAS="public" \
+            flyway/flyway migrate
