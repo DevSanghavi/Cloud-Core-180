@@ -1,0 +1,16 @@
+name: Database Migrations
+on:
+  push:
+    branches: [main]
+jobs:
+  migrate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run Flyway Migrations
+        uses: flyway/flyway-github-action@v1
+        with:
+          flyway-url: jdbc:postgresql://${{ secrets.DB_HOST }}:5432/postgres
+          flyway-user: postgres
+          flyway-password: ${{ secrets.DB_PASSWORD }}
+          flyway-schemas: public
