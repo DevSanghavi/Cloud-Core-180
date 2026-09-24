@@ -71,3 +71,4 @@ jobs:
           # Health check to confirm recovery
           curl -fsS http://localhost:8080 >/dev/null && echo "Rollback successful! System restored to $ROLLBACK_TAG."
           docker compose ps
+
