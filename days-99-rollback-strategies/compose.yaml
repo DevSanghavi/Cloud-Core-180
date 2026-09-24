@@ -1,0 +1,6 @@
+services:
+  web:
+    image: ${IMAGE}:${IMAGE_TAG}
+    ports:
+      - "8080:80"
+    restart: unless-stopped
