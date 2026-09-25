@@ -14,3 +14,4 @@ The workflow tests the image, pushes it to GHCR, and deploys it with Docker Comp
 | `docker run` | Tests the image |
 | `docker compose up -d` | Deploys the service |
 | `gh run list` | Checks workflow runs |
+
