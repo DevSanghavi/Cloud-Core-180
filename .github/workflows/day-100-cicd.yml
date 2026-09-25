@@ -1,0 +1,50 @@
+name: Day 100 End-to-End CI/CD
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+  packages: write
+
+env:
+  IMAGE: ghcr.io/devsanghavi/day100-cicd
+
+jobs:
+  build-test-push-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set image tag
+        id: meta
+        run: echo "tag=${GITHUB_SHA}" >> "$GITHUB_OUTPUT"
+
+      - name: Build image
+        run: docker build -t "$IMAGE:${{ steps.meta.outputs.tag }}" ./days-100-end-to-end-cicd
+
+      - name: Test image
+        run: |
+          docker run -d --name day100-test -p 8080:80 "$IMAGE:${{ steps.meta.outputs.tag }}"
+          sleep 3
+          curl --fail http://localhost:8080
+          docker rm -f day100-test
+
+      - name: Log in to GHCR
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Push image
+        run: docker push "$IMAGE:${{ steps.meta.outputs.tag }}"
+
+      - name: Deploy
+        run: |
+          echo "Deploying $IMAGE:${{ steps.meta.outputs.tag }}"
+          echo "A real remote deploy would run SSH or a deployment action here."
