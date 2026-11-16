@@ -42,10 +42,10 @@ Expected: the subscription status is `Confirmed`.
 ### 3. Verify the systemd timer is enabled and active
 
 ```bash
-aws ssm send-command --profile "$PROFILE" --region "$REGION" --instance-ids "$EC2_INSTANCE_ID" --document-name "AWS-RunShellScript" --comment "P3 final timer check" --parameters '{"commands":["systemctl is-enabled backup-logs.timer; systemctl is-active backup-logs.timer; systemctl list-timers backup-logs.timer --no-pager"]}' --output json
+aws ssm send-command --profile "$PROFILE" --region "$REGION" --instance-ids "$EC2_INSTANCE_ID" --document-name "AWS-RunShellScript" --comment "P3 final timer check" --parameters '{"commands":["systemctl is-enabled devops-monitoring-backup.timer; systemctl is-active devops-monitoring-backup.timer; systemctl list-timers devops-monitoring-backup.timer --no-pager"]}' --output json
 ```
 
-Type the exact timer unit name configured in P3 if it differs from `backup-logs.timer`; the timer name is fixed by the P3 systemd unit file.
+Type the exact timer unit name configured in P3 if it differs from `devops-monitoring-backup.timer`; the timer name is fixed by the P3 systemd unit file.
 
 Expected: the command is submitted successfully and returns `enabled`, `active`, and the next scheduled run time.
 
@@ -128,7 +128,7 @@ This project strengthened my practical skills in AWS CloudWatch, SNS, S3, EC2, s
 | SNS subscription | `aws sns list-subscriptions-by-topic ...` | `Confirmed` | Yes |
 | Backup timer | SSM `systemctl` result | Enabled and active | Yes |
 | S3 backups | `aws s3api list-objects-v2 ...` | Recent non-empty backup objects | Yes |
-| Dashboard | `aws cloudwatch list-dashboards ...` | P3 dashboard listed | Yes |
+| Dashboard | `curl -sS -o /dev/null -w "HTTP %{http_code}" "$DASHBOARD_URL"` | Application-served dashboard returns HTTP 200 | Yes |
 | GitHub Actions | Browser | Latest workflow successful | Yes |
 | README | Repository | Monitoring and recovery documented | Yes |
 
